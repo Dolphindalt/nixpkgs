@@ -625,6 +625,7 @@
   ./services/games/crossfire-server.nix
   ./services/games/factorio.nix
   ./services/games/freeciv.nix
+  ./services/games/lila.nix
   ./services/games/mchprs.nix
   ./services/games/minecraft-server.nix
   ./services/games/minetest-server.nix

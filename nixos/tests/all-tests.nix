@@ -866,6 +866,7 @@ in
   lidarr = runTest ./lidarr.nix;
   lightdm = runTest ./lightdm.nix;
   lighttpd = runTest ./lighttpd.nix;
+  lila = runTest ./lila.nix;
   limesurvey = runTest ./limesurvey.nix;
   limine = import ./limine { inherit runTest; };
   linkwarden = runTest ./web-apps/linkwarden.nix;
