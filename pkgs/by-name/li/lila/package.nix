@@ -58,7 +58,7 @@ let
     # Configure the derivation to have a fixed output
     outputHashMode = "recursive";
     outputHashAlgo = "sha256";
-    outputHash = "sha256-iZO6arTQtZklyObMwlucFmQkNMNxY0KA2fl88Yb/5Xk=";
+    outputHash = "sha256-nMJVbeV9kPiB5BHWMpxBx+fpVPx5oX2S7p3JVRzrQIs=";
   };
 in
 # Phase 2: Use pre-fetched dependencies (no network access)
