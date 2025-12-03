@@ -116,6 +116,9 @@ stdenv.mkDerivation (finalAttrs: {
     # Copy example configs (for reference, not used directly by the wrapper)
     cp -r ${finalAttrs.src}/conf/* $out/share/lila/conf.examples/
 
+    # Copy public directory (required at runtime)
+    cp -r ${finalAttrs.src}/public $out/share/lila/
+
     # Make the binary executable
     chmod +x $out/share/lila/bin/lila
 

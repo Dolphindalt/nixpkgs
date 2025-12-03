@@ -285,6 +285,11 @@ in
         JAVA_HOME = "${pkgs.jdk21}";
       };
 
+      preStart = ''
+        # Symlink public directory from package to working directory
+        ln -sfn ${cfg.package}/share/lila/public /var/lib/lila/public
+      '';
+
       script = ''
         # Load secrets
         ${optionalString (cfg.secrets.bpassSecretFile != null) ''
