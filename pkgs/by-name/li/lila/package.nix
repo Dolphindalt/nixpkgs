@@ -6,6 +6,7 @@
   stdenv,
   lib,
   nixosTests,
+  gawk,
 }:
 
 let
@@ -121,7 +122,8 @@ stdenv.mkDerivation (finalAttrs: {
     # Create wrapper script that uses the correct Java version
     # Config files should be provided via command-line args or by the NixOS module
     makeWrapper $out/share/lila/bin/lila $out/bin/lila \
-      --set JAVA_HOME ${jdk}
+      --set JAVA_HOME ${jdk} \
+      --prefix PATH : ${lib.makeBinPath [ jdk gawk ]}
 
     runHook postInstall
   '';
