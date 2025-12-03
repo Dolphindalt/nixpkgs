@@ -41,7 +41,7 @@ let
     ${optionalString (cfg.secrets.bpassSecretFile == null) ''
       # Base64-encoded 32-byte (256-bit) AES key for development only
       # DO NOT use in production - this is insecure and publicly known
-      user.password.bpass.secret = "ZGV2c2VjcmV0MTIzNDU2Nzg5MGFiY2RlZmdoaWprbG1ubw=="
+      user.password.bpass.secret = "ZGV2LXNlY3JldC0xMjM0NTY3ODkwYWJjZGVmZ2hpams="
     ''}
 
     ${cfg.extraConfig}
