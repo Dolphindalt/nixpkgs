@@ -39,8 +39,9 @@ let
       user.password.bpass.secret = "''${BPASS_SECRET}"
     ''}
     ${optionalString (cfg.secrets.bpassSecretFile == null) ''
-      # Base64-encoded string "dev-secret-not-for-production-use"
-      user.password.bpass.secret = "ZGV2LXNlY3JldC1ub3QtZm9yLXByb2R1Y3Rpb24tdXNl"
+      # Base64-encoded 32-byte (256-bit) AES key for development only
+      # DO NOT use in production - this is insecure and publicly known
+      user.password.bpass.secret = "ZGV2c2VjcmV0MTIzNDU2Nzg5MGFiY2RlZmdoaWprbG1ubw=="
     ''}
 
     ${cfg.extraConfig}
