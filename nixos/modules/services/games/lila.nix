@@ -38,6 +38,9 @@ let
     ${optionalString (cfg.secrets.bpassSecretFile != null) ''
       user.password.bpass.secret = "''${BPASS_SECRET}"
     ''}
+    ${optionalString (cfg.secrets.bpassSecretFile == null) ''
+      user.password.bpass.secret = "dev_secret_not_for_production"
+    ''}
 
     ${cfg.extraConfig}
   '';
